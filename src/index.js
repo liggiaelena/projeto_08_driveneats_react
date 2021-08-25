@@ -1,8 +1,8 @@
 import ReactDOM from 'react-dom';
 
-import Top from "./Top";
-import Page from './Page';
-import Bottom from './Bottom';
+import Top from "./Html/Top";
+import Page from './Html/Page';
+import Bottom from './Html/Bottom';
 
 function Root(){
     return(
