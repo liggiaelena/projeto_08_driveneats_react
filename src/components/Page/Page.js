@@ -1,6 +1,4 @@
-import { select } from "async";
 import React,{useState} from "react";
-import { unstable_renderSubtreeIntoContainer } from "react-dom";
 import menu from "../../Dados/Menu";
 import "./Page.css";
 
@@ -43,14 +41,17 @@ function Choice(props){
         setBorder("border");
         setButtons("");  
     }
+
     function unselected(){
-        setBorder("");
-        setButtons("disappear"); 
+         setBorder("");
+            setButtons("disappear"); 
     }
 
     function remove(quant){
-        if(quant === "0"){
-            unselected();
+        console.log(quant)
+        if(quant === 1){
+           unselected();
+            
         }
         else{
              setQuantity(quantity - 1);
@@ -70,7 +71,11 @@ function Choice(props){
                     <h4>R$ <span>{price}</span></h4>
                     <div className={`mini-buttom ${buttons}`}>
 
-                        <button className="red" onClick={()=>remove(quantity)}>-</button> {quantity}
+                        <button className="red" onClick={
+                            (evento)=>{
+                                remove(quantity);
+                                evento.stopPropagation()}}>-</button> 
+                            {quantity}
                         <button className=" ligthgreen"onClick={add} >+</button>       
                     </div>
                 </div>

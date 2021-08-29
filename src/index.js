@@ -1,5 +1,4 @@
 import ReactDOM from 'react-dom';
-
 import Top from "./components/Top/Top";
 import Page from './components/Page/Page';
 import Bottom from './components/Boottom/Bottom';
