@@ -1,4 +1,6 @@
-import menu from "../Dados/Menu";
+import menu from "../../Dados/Menu";
+import "./Page.css";
+
 
 export default function Page(){
     return(

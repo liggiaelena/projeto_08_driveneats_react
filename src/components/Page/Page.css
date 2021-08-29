@@ -1,0 +1,80 @@
+h2{
+    font-family: "Righteous";
+    font-size: 26px;
+    color: #333333;
+    letter-spacing: 00.018em;
+    margin-left: 14px;
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+h3{
+    font-family: "Roboto";
+    font-weight: 700;
+    font-size: 16px;
+    color:#333333;
+}
+h4{
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 16px;
+    color: #000000;
+}
+.choice p{
+    font-family: "Roboto";
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 18px;
+    color: #a6a6a6;
+    line-height: 18px;
+
+}
+.suggestion img{
+    width: 144px;
+    height: 87px;
+    border-radius: 4px;
+    /*margin: 0px 14px;*/
+}
+.page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: calc(100%-184px);
+    margin-top: 92px;
+    margin-bottom:92px;
+}
+.suggestion{
+    display: flex;
+    overflow-x: scroll; 
+    
+}
+.choice{
+    width: 172px;
+    height: 216px;
+    border-radius: 9px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+    margin: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-shrink: 0;
+    padding-left: 14px;
+    position:relative;
+}
+.choice:hover{
+    cursor: pointer;
+}
+
+.border{
+    box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25), inset 0px 0px 0px 5px #32B72F;
+}
+ion-icon{
+   color:#32B72F;
+   position:absolute;
+   font-size: 20px;
+   bottom: 10px;
+   right: 13px;
+}
+.disappear{
+    display: none;
+}

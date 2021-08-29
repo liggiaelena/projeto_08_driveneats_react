@@ -1,3 +1,9 @@
+
+import "../../CSS/reset.css";
+import "../../CSS/styles.css";
+import "./Top.css";
+
+
 export default function Top(){
     return(
         <div class="topo">
