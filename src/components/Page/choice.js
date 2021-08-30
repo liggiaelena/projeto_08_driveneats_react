@@ -27,11 +27,11 @@ export default function Choice(props){
         setBorder("border");
         setButtons("");  
         selectCategory();
-        verifyCategory();
+        
         menu[j].suggestions[index].selected=true;
 
        addItem(selecionado);
-       
+       verifyCategory();
     }
 
    function unselected(){

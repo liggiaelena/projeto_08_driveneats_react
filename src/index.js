@@ -10,6 +10,7 @@ import "./CSS/styles.css";
 function Root(){
     const[verde, setVerde] = useState("");
     const[buttonSentence,setButtonSentence] = useState("Selecione os 3 itens para fechar o pedido");
+    const[link,setLink] = useState("");
     const[pratos, setPratos]=useState([]);
     let novoPratos= [];
 
@@ -18,18 +19,32 @@ function Root(){
         if(menu[0].typeSelected && menu[1].typeSelected && menu[2].typeSelected){
             setVerde("verde");
             setButtonSentence("Fechar pedido");
+            creatLink();
         }
         else{
             setVerde("");
             setButtonSentence("Selecione os 3 itens para fechar o pedido");
+
         }
         
     }
 
     function addItem(item){ 
-        
+        let test=true;
+        const x = pratos.find((prato)=>{
+            
+            if(JSON.stringify(prato.name)== JSON.stringify(item.name)){
+               test=false;
+              
+                return true;
+            }
+        })
+        if(test){
+            pratos.push(item);
+            setPratos([...pratos]);
+        }
         console.log(item)
-        setPratos([...pratos,item]);
+        
         console.log(pratos);
     }
     function deselecionarItem(item){
@@ -85,13 +100,50 @@ function Root(){
         console.log(pratos);
     }
 
+    function creatLink(){
+        const fixed = "https://wa.me/5515991379663?text=";
+        let valorTotal=0;
 
+        const x = pratos.forEach(prato => {
+            let valor= parseFloat(prato.price.replace(",","."));
+            valorTotal = valorTotal + valor;
+            console.log(valorTotal)
+            console.log(valor)
+        });
+
+        const salgados = pratos.filter((prato)=>{
+            if(prato.j == 0){
+                return true;
+            }
+        })
+        const bebidas = pratos.filter((bebida)=>{
+            if(bebida.j == 1){
+                return true;
+            }
+        })
+        const sombremessas = pratos.filter((sobremesa)=>{
+            if(sobremesa.j == 2){
+                return true;
+            }
+        })
+
+        const textoSalgados = salgados.map((salgado)=> `${salgado.name} (${salgado.quantity}x)\n`);
+        const textoBebidas = bebidas.map((bebida)=> `${bebida.name} (${bebida.quantity}x)\n`);
+        const textoSobrmessas = sombremessas.map((sobremesa)=> `${sobremesa.name} (${sobremesa.quantity}x)\n`);
+
+        const texto = `-Prato: ${textoSalgados}-Bebida:${textoBebidas}-Sobremesa: ${textoSobrmessas}Total: R$ ${valorTotal}`
+        const textoCodificado = encodeURIComponent(texto);
+        const menssagem = fixed+ textoCodificado;
+        setLink(menssagem);
+        console.log(texto);
+
+    }
     
     return(
         <div>
             <Top />
             <Page verifyCategory={verifyCategory} pratos={pratos} setPratos={setPratos}  addItem={addItem} deselecionarItem={deselecionarItem} aumentarQuantidadeItem={aumentarQuantidadeItem} diminuirQuantidadeItem={diminuirQuantidadeItem}/>
-            <Bottom verde={verde} buttonSentence={buttonSentence}/>
+            <Bottom verde={verde} buttonSentence={buttonSentence} pratos={pratos} link={link} />
         </div>
         
     );

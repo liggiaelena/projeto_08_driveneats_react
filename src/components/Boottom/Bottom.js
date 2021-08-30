@@ -5,10 +5,11 @@ import React from "react";
 export default function Bottom(props){
     const verde=props.verde;
     const buttonSentence=props.buttonSentence;
+    const link=props.link;
 
     return(
         <div class="bottom">
-        <a  href="#1" class={`button ${verde}`} onclick="dados()"><p>{buttonSentence}</p></a>
+        <a  href={link} class={`button ${verde}`}><p>{buttonSentence}</p></a>
     </div>
     );
 }
