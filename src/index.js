@@ -106,7 +106,7 @@ function Root(){
 
         const x = pratos.forEach(prato => {
             let valor= parseFloat(prato.price.replace(",","."));
-            valorTotal = valorTotal + valor;
+            valorTotal = valorTotal + (valor*prato.quantity);
             console.log(valorTotal)
             console.log(valor)
         });
