@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import menu from "../../Dados/Menu";
 
-let pratos=[];
+
 
 export default function Choice(props){
     const {name, imgSrc, imgAlt , description1, description2, price,selected} = props.info;
@@ -10,10 +10,17 @@ export default function Choice(props){
     const verifyCategory=props.verifyCategory;
     const selectCategory = props.selectCategory;
     const unselectCategory = props.unselectCategory;
+    const addItem = props.addItem;
+    const deselecionarItem =props.deselecionarItem;
+    const aumentarQuantidadeItem = props.aumentarQuantidadeItem;
+    const diminuirQuantidadeItem = props.diminuirQuantidadeItem;
+   
+
     const [border, setBorder]= useState("");
     const [buttons, setButtons]= useState("disappear");
     const [quantity,setQuantity]= useState(1);
-    const [selecionar, setSelecionar]= useState({name,quantity});
+    const [selecionado, setSelecionado]= useState({name,quantity,price,j});
+    
     
     function select(){
         
@@ -23,9 +30,8 @@ export default function Choice(props){
         verifyCategory();
         menu[j].suggestions[index].selected=true;
 
-        setSelecionar({name,quantity})
-        pratos.push(selecionar);   
-        console.log(pratos);
+       addItem(selecionado);
+       
     }
 
    function unselected(){
@@ -34,21 +40,7 @@ export default function Choice(props){
         menu[j].suggestions[index].selected=false;
        
 
-         pratos =[
-             ...pratos.filter((prato)=> {
-            
-            
-            if(JSON.stringify(prato)!== JSON.stringify(selecionar)){
-                
-                return true;
-            }
-            else{
-                return false;
-            }
-        })
-         ]
-         console.log(pratos);
-    
+       deselecionarItem(selecionado);
 
         if(!menu[j].suggestions[0].selected && !menu[j].suggestions[1].selected && !menu[j].suggestions[2].selected && !menu[j].suggestions[3].selected){
             unselectCategory();
@@ -65,11 +57,15 @@ export default function Choice(props){
         }
         else{
              setQuantity(quantity - 1);
+            diminuirQuantidadeItem(selecionado,quantity);
         }
        
     }
     function add(){
         setQuantity(quantity + 1);
+        setSelecionado({...selecionado,name,quantity,price,j})
+       aumentarQuantidadeItem(selecionado, quantity);
+
     }
 
     return(
