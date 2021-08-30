@@ -1,10 +1,14 @@
 import "./Bottom.css";
+import React from "react";
 
 
-export default function Bottom(){
+export default function Bottom(props){
+    const verde=props.verde;
+    const buttonSentence=props.buttonSentence;
+
     return(
         <div class="bottom">
-        <a  href="#1" class="button" onclick="dados()">Selecione os 3 itens<br/>para fechar o pedido</a>
+        <a  href="#1" class={`button ${verde}`} onclick="dados()"><p>{buttonSentence}</p></a>
     </div>
     );
 }

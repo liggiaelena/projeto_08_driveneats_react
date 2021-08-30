@@ -2,6 +2,7 @@ const menu = [
     {
         title:'Primeiro, seu prato',
         type:'plate',
+        typeSelected:false,
         suggestions:[
         {
             name: 'Macarronada da tia',
@@ -9,7 +10,8 @@ const menu = [
             imgAlt: 'macarrão',
             description1:'Vem com queijo',
             description2:'Molho à bolonhesa',
-            price:'20,30'
+            price:'20,30',
+            selected: false
         },
         {
             name: 'Strogonoff da tia',
@@ -17,7 +19,8 @@ const menu = [
             imgAlt: 'strogonoff',
             description1:'Vem com queijo',
             description2:'Molho à bolonhesa',
-            price:'25,00'
+            price:'25,00',
+            selected: false
         },
         {
             name: 'Peixe-frito da tia',
@@ -25,7 +28,8 @@ const menu = [
             imgAlt: 'peixe frito',
             description1:'Vem com queijo',
             description2:'Molho à bolonhesa',
-            price:'30,00'
+            price:'30,00',
+            selected: false
         },
         {
             name: 'Carne de panela',
@@ -33,13 +37,15 @@ const menu = [
             imgAlt: 'Carne-de-Panela',
             description1:'Vem com queijo',
             description2:'Molho à bolonhesa',
-            price:'31,00'
+            price:'31,00',
+            selected: false
         }
         ]
     },
     {
     title:'Agora, sua bebida',
     type:'drink',
+    typeSelected:false,
     suggestions:[
         {
             name: 'Suco de laranja',
@@ -47,15 +53,17 @@ const menu = [
             imgAlt: 'suco de laranja',
             description1:'Com gelo',
             description2:'Sem açucar',
-            price:'7,50'
-        },
+            price:'7,50' ,
+            selected: false       
+},
         {
             name: 'Milk-shake',
             imgSrc: 'fotos/milk-shake.jpg' ,
             imgAlt: 'milk-shake',
             description1:'Com gelo',
             description2:'Sem açucar',
-            price:'15,00'
+            price:'15,00',
+            selected: false
         },
         {
             name: 'Água',
@@ -63,7 +71,8 @@ const menu = [
             imgAlt: 'água',
             description1:'Com gelo',
             description2:'Sem açucar',
-            price:'4,50'
+            price:'4,50' ,
+            selected: false       
         },
         {
             name: 'Água com gás',
@@ -71,13 +80,15 @@ const menu = [
             imgAlt: 'água',
             description1:'Com gelo',
             description2:'Sem açucar',
-            price:'4,50'
-        }
+            price:'4,50' ,
+            selected: false      
+         }
         ]
     }, 
     {
     title:'Por fim, seu sobremesa',
     type:'dessert',
+    typeSelected:false,
     suggestions:[
         {
             name: 'Panqueca',
@@ -85,7 +96,8 @@ const menu = [
             imgAlt: 'panqueca',
             description1:'Com mel ou melado',
             description2:'Opcional as frutas',
-            price:'15,00'
+            price:'15,00',
+            selected: false
         },
         {
             name: 'Sorvete',
@@ -93,7 +105,8 @@ const menu = [
             imgAlt: 'Sorvete',
             description1:'Com mel ou melado',
             description2:'Opcional as frutas',
-            price:'15,00'
+            price:'15,00',
+            selected: false
         },
         {
             name: 'Torta de morango',
@@ -101,7 +114,8 @@ const menu = [
             imgAlt: 'Torta-de-morango',
             description1:'Com mel ou melado',
             description2:'Opcional as frutas',
-            price:'10,00'
+            price:'10,00',
+            selected: false
         },
         {
             name: 'Torta de Chocolate',
@@ -109,11 +123,14 @@ const menu = [
             imgAlt: 'torta-de-chocolate',
             description1:'Com mel ou melado',
             description2:'Opcional as frutas',
-            price:'11,00'
+            price:'11,00',
+            selected: false
         }
     ]
 
 }
 ]
+
+
 
 export default menu;
