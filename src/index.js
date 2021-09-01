@@ -38,6 +38,7 @@ function Root(){
               
                 return true;
             }
+            return false;
         })
         if(test){
             pratos.push(item);
@@ -53,6 +54,7 @@ function Root(){
                
                 return true;
             }
+            return false;
         })
         ]
         setPratos(novoPratos);
@@ -109,16 +111,19 @@ function Root(){
             if(prato.j === 0){
                 return true;
             }
+            return false;
         })
         const bebidas = pratos.filter((bebida)=>{
             if(bebida.j === 1){
                 return true;
             }
+            return false;
         })
         const sombremessas = pratos.filter((sobremesa)=>{
             if(sobremesa.j === 2){
                 return true;
             }
+            return false;
         })
 
         const textoSalgados = salgados.map((salgado)=> `${salgado.name} (${salgado.quantity}x)\n`);
