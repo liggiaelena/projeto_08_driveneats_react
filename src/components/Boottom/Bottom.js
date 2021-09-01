@@ -8,8 +8,8 @@ export default function Bottom(props){
     const link=props.link;
 
     return(
-        <div class="bottom">
-        <a  href={link} class={`button ${verde}`}><p>{buttonSentence}</p></a>
+        <div className="bottom">
+        <a  href={link} className={`button ${verde}`}><p>{buttonSentence}</p></a>
     </div>
     );
 }

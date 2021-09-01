@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React from "react";
 import menu from "../../Dados/Menu";
 import "./Page.css";
 import Choice from "./choice";
@@ -16,9 +16,9 @@ export default function Page(props){
   
 
     return(
-    <div class="page">
+    <div className="page">
 
-        {menu.map((typeFood,j)=> <Menu info={typeFood} j={j} verifyCategory={verifyCategory} pratos={pratos} setPratos={setPratos} addItem={addItem} deselecionarItem={deselecionarItem} aumentarQuantidadeItem={aumentarQuantidadeItem} diminuirQuantidadeItem={diminuirQuantidadeItem}/>)}
+        {menu.map((typeFood,j)=> <Menu key={j} info={typeFood} j={j} verifyCategory={verifyCategory} pratos={pratos} setPratos={setPratos} addItem={addItem} deselecionarItem={deselecionarItem} aumentarQuantidadeItem={aumentarQuantidadeItem} diminuirQuantidadeItem={diminuirQuantidadeItem}/>)}
 
     </div>
     );
@@ -46,9 +46,9 @@ function Menu(props){
     return( 
         <div>
             <h2>{title}</h2>
-            <div class={`${type} suggestion`}>
+            <div className={`${type} suggestion`}>
                  {suggestions.map((suggestion,index)=> 
-                <Choice info={suggestion} i={index} j={j} selectCategory={selectCategory} unselectCategory={unselectCategory} verifyCategory={verifyCategory} pratos={pratos} setPratos={setPratos} addItem={addItem} deselecionarItem={deselecionarItem} aumentarQuantidadeItem={aumentarQuantidadeItem} diminuirQuantidadeItem={diminuirQuantidadeItem}/>
+                <Choice key={index} info={suggestion} i={index} j={j} selectCategory={selectCategory} unselectCategory={unselectCategory} verifyCategory={verifyCategory} pratos={pratos} setPratos={setPratos} addItem={addItem} deselecionarItem={deselecionarItem} aumentarQuantidadeItem={aumentarQuantidadeItem} diminuirQuantidadeItem={diminuirQuantidadeItem}/>
                 )}  
             </div>
         </div>

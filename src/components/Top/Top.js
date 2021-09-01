@@ -6,7 +6,7 @@ import "./Top.css";
 
 export default function Top(){
     return(
-        <div class="topo">
+        <div className="topo">
         <h1>DrivenEats</h1>
         <p>Sua comida em 6 minutos</p>
     </div>

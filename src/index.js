@@ -31,7 +31,7 @@ function Root(){
 
     function addItem(item){ 
         let test=true;
-        const x = pratos.find((prato)=>{
+        pratos.find((prato)=>{
             
             if(JSON.stringify(prato.name)== JSON.stringify(item.name)){
                test=false;
@@ -43,9 +43,7 @@ function Root(){
             pratos.push(item);
             setPratos([...pratos]);
         }
-        console.log(item)
-        
-        console.log(pratos);
+  
     }
     function deselecionarItem(item){
          novoPratos =[
@@ -58,8 +56,7 @@ function Root(){
         })
         ]
         setPratos(novoPratos);
-        console.log(novoPratos);
-        console.log(pratos)
+       
     }
     function aumentarQuantidadeItem(item,quantity){
         novoPratos =[
@@ -78,8 +75,6 @@ function Root(){
         })]
 
         setPratos(novoPratos);
-        console.log(novoPratos);
-        console.log(pratos);
     }
 
     function diminuirQuantidadeItem(item,quantity){
@@ -96,15 +91,14 @@ function Root(){
             }
         })]
         setPratos(novoPratos);
-        console.log(novoPratos);
-        console.log(pratos);
+        
     }
 
     function creatLink(){
         const fixed = "https://wa.me/5515991379663?text=";
         let valorTotal=0;
 
-        const x = pratos.forEach(prato => {
+        pratos.forEach(prato => {
             let valor= parseFloat(prato.price.replace(",","."));
             valorTotal = valorTotal + (valor*prato.quantity);
             console.log(valorTotal)
@@ -141,9 +135,9 @@ function Root(){
     
     return(
         <div>
-            <Top />
-            <Page verifyCategory={verifyCategory} pratos={pratos} setPratos={setPratos}  addItem={addItem} deselecionarItem={deselecionarItem} aumentarQuantidadeItem={aumentarQuantidadeItem} diminuirQuantidadeItem={diminuirQuantidadeItem}/>
-            <Bottom verde={verde} buttonSentence={buttonSentence} pratos={pratos} link={link} />
+            <Top key={1}/>
+            <Page key={2} verifyCategory={verifyCategory} pratos={pratos} setPratos={setPratos}  addItem={addItem} deselecionarItem={deselecionarItem} aumentarQuantidadeItem={aumentarQuantidadeItem} diminuirQuantidadeItem={diminuirQuantidadeItem}/>
+            <Bottom key={3} verde={verde} buttonSentence={buttonSentence} pratos={pratos} link={link} />
         </div>
         
     );
