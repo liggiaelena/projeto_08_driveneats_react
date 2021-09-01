@@ -4,7 +4,7 @@ import menu from "../../Dados/Menu";
 
 
 export default function Choice(props){
-    const {name, imgSrc, imgAlt , description1, description2, price,selected} = props.info;
+    const {name, imgSrc, imgAlt , description1, description2, price} = props.info;
     const index=props.i;
     const j=props.j;
     const verifyCategory=props.verifyCategory;

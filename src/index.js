@@ -33,7 +33,7 @@ function Root(){
         let test=true;
         pratos.find((prato)=>{
             
-            if(JSON.stringify(prato.name)== JSON.stringify(item.name)){
+            if(JSON.stringify(prato.name)=== JSON.stringify(item.name)){
                test=false;
               
                 return true;
@@ -62,7 +62,7 @@ function Root(){
         novoPratos =[
             ...pratos.map((prato)=> {
            
-           if(JSON.stringify(prato.name) == JSON.stringify(item.name)){
+           if(JSON.stringify(prato.name) === JSON.stringify(item.name)){
                prato.quantity = quantity +1;
             console.log(prato.quantity)
               console.log(prato.name)
@@ -81,7 +81,7 @@ function Root(){
            novoPratos =[
               ...pratos.map((prato)=> {
            
-              if(JSON.stringify(prato.name) == JSON.stringify(item.name)){
+              if(JSON.stringify(prato.name) === JSON.stringify(item.name)){
                 prato.quantity = quantity -1;
               
                 return prato;
@@ -106,17 +106,17 @@ function Root(){
         });
 
         const salgados = pratos.filter((prato)=>{
-            if(prato.j == 0){
+            if(prato.j === 0){
                 return true;
             }
         })
         const bebidas = pratos.filter((bebida)=>{
-            if(bebida.j == 1){
+            if(bebida.j === 1){
                 return true;
             }
         })
         const sombremessas = pratos.filter((sobremesa)=>{
-            if(sobremesa.j == 2){
+            if(sobremesa.j === 2){
                 return true;
             }
         })
